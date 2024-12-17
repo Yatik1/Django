@@ -9,5 +9,5 @@ def say_hello(request):
 def say_bye(request):
     return HttpResponse("Good bye Friend!!")
 
-def dyn_params(request,pk):
+def dyn_params(request,pk): 
     return HttpResponse('Project name:' + str(pk))
