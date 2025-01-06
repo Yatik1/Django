@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from django.core import serializers
 from . import models
+from . import forms
 
 # Create your views here.
 def say_hello(request):
@@ -28,3 +29,8 @@ def get_project(request,id):
 
     json_project = serializers.serialize('json',[project])
     return HttpResponse(json_project,content_type='application/json')
+
+def create_project(request):
+    form = forms.ProjectForm()
+    context = {'form':form}
+    return render(request,'form.html',context)
