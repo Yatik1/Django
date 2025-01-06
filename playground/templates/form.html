@@ -1,0 +1,16 @@
+<h1>This is form page</h1>
+
+<form method="post" action="">
+    {% csrf_token %}
+
+    {{form.as_p}} 
+
+    <!-- {% for field in form %} // either this or above code line 6
+        <div>
+            {{field.label}} 
+            {{field}}
+        </div>
+    {% endfor %} -->
+
+    <input type="submit" value="Submit">
+</form>
