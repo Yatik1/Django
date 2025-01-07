@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse,JsonResponse
 from django.core import serializers
 from . import models
@@ -32,5 +32,19 @@ def get_project(request,id):
 
 def create_project(request):
     form = forms.ProjectForm()
+
+    # if request.method == 'POST':
+        # form_data = request.POST
+        # print("Form data:" , form_data)
+        # title = form_data['title']
+        # print("Project Title" , title)
+
+    if request.method == 'POST':
+        form = forms.ProjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('getall') # getall is url name, check urls file for name
+            # return HttpResponse("Project Created Successfully")
+
     context = {'form':form}
     return render(request,'form.html',context)
