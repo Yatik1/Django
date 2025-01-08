@@ -30,6 +30,10 @@ def get_project(request,id):
     json_project = serializers.serialize('json',[project])
     return HttpResponse(json_project,content_type='application/json')
 
+def form_showcase(request):
+    form = forms.ProjectForm()
+    return render(request,"form.html",{"form":form})
+
 def create_project(request):
     form = forms.ProjectForm()
 
