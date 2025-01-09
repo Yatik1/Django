@@ -7,6 +7,7 @@ class Project(models.Model):
     id=models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False, unique=True)
     title=models.CharField(max_length=200)
     description=models.TextField(blank=True,null=True)
+    feature_image = models.ImageField(blank=True, null=True)
     demo_link=models.CharField(max_length=2000,blank=True,null=True)
     source_link=models.CharField(max_length=2000,blank=True,null=True)
     tag=models.ManyToManyField('Tag',blank=True)
