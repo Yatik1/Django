@@ -1,4 +1,15 @@
-<h1>This is form page</h1>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href='{% static "styles/main.css" %}'>
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is form page</h1>
+    <img class="image" src="{% static 'images/cfinal.jpg' %}" />
 
 <form method="post" action="">
     {% csrf_token %}
@@ -14,3 +25,5 @@
 
     <input type="submit" value="Submit">
 </form>
+</body>
+</html>

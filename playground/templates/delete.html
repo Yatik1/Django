@@ -1,7 +1,19 @@
-<h1>Delete page</h1>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href='{% static "styles/main.css" %}'>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Delete page</h1>
 
 <form method="post" action="">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{object}}" ?</p>
-    <input type="submit" value="Delete" />
+    <input class="delete" type="submit" value="Delete" />
 </form>
+</body>
+</html>
