@@ -119,6 +119,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = '/images/' # to render the image on the template
+
 STATICFILES_DIRS = [
     # BASE_DIR / 'static' # or
     os.path.join(BASE_DIR,'static')
