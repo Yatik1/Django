@@ -18,6 +18,15 @@ class Project(models.Model):
     def __str__(self):
         return self.title
     
+    @property # this property can be use during rendering img on template such that if img not available an error don't show up.
+    def imageURL(self):
+        try:
+            img = self.feature_image.url
+        except:
+            img = ''
+
+        return img
+    
 
 class Review(models.Model):
 
