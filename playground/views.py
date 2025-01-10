@@ -44,7 +44,7 @@ def create_project(request):
         # print("Project Title" , title)
 
     if request.method == 'POST':
-        form = forms.ProjectForm(request.POST)
+        form = forms.ProjectForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('getall') # getall is url name, check urls file for name
@@ -58,7 +58,7 @@ def update_project(request,pk):
     form = forms.ProjectForm(instance=project)
 
     if request.method == 'POST':
-        form = forms.ProjectForm(request.POST, instance=project)
+        form = forms.ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             form.save()
             return redirect("getall")
