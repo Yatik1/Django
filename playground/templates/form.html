@@ -11,7 +11,13 @@
     <h1>This is form page</h1>
     <img class="image" src="{% static 'images/cfinal.jpg' %}" />
 
-<form method="post" action="">
+
+<!-- Now the form still can't handle the image/video data which are multiform data , to do so we add enctype -->
+<form 
+    method="post" 
+    action=""
+    enctype="multipart/form-data"
+>
     {% csrf_token %}
 
     {{form.as_p}} 
